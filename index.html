@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta Navideña</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="instructions">
+        <p>Instrucciones:<br>Escribe tu nombre y agrégalo <br>se pondrá el botón en verde para personalizar el mensaje.<br>Haz clic en la tarjeta para abrirla.</p>
+    </div>
+
+    <div class="valentines-day-card">
+      <input id="open" type="checkbox">
+      <label class="open" for="open"></label>
+      <div class="card-front">
+        <div class="note">
+          <p>Haz Click</p>
+          <img src="IMG_9434.GIF" alt="Reno navideño" style="width: 100px; height: auto;">
+        </div>
+      </div>
+
+      <div class="card-inside">
+        <div class="texto" id="card-text">¡Que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres! Que el Año Nuevo traiga nuevos sueños y oportunidades. <br><br>¡Feliz Navidad!</div>
+        <img src="tree.gif" alt="árbol navideño" style="width: 100px; height: auto; position: absolute; top: 200px; left: 100px;">
+      </div>
+     
+      <!-- Barra para el nombre -->
+      <div class="name-bar">
+        <input type="text" id="name-input" placeholder="Escribe tu nombre aquí">
+        <button id="submit-name">Agregar Nombre</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const submitButton = document.getElementById('submit-name');
+    const nameInput = document.getElementById('name-input');
+    const cardText = document.getElementById('card-text');
+    const openCheckbox = document.getElementById('open');
+
+    submitButton.addEventListener('click', function () {
+      const name = nameInput.value.trim();
+      if (name === '') {
+        alert('Por favor, escribe tu nombre.');
+        return;
+      }
+
+      // Texto que se mostrará
+      // Texto que se mostrará
+const fullText = name + '...  ¡Que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres! Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
+      
+      // Cambiar el color del botón a verde
+      this.style.backgroundColor = 'green';
+      this.style.color = 'white'; // Cambiar el color del texto si es necesario
+  
+      // Función para mostrar el texto letra por letra
+      let index = 0;
+      cardText.innerHTML = ''; // Limpiar el texto anterior
+      const interval = setInterval(() => {
+        if (index < fullText.length) {
+          // Agregar el carácter actual al innerHTML
+          cardText.innerHTML += fullText.charAt(index);
+          index++;
+        } else {
+          clearInterval(interval); // Detener el intervalo cuando se haya mostrado todo el texto
+        }
+      }, 80); // Cambia el número para ajustar la velocidad de aparición
+    });
+
+    // Evitar que la tarjeta se abra si el botón no está en verde
+    openCheckbox.addEventListener('change', function () {
+      if (this.checked && submitButton.style.backgroundColor !== 'green') {
+        this.checked = false; // Cerrar la tarjeta si el botón no está en verde
+        alert('Por favor, agrega tu nombre primero.');
+      }
+    });
+
+    // Restablecer el nombre y el botón al cerrar la tarjeta
+    openCheckbox.addEventListener('change', function () {
+      if (!this.checked) {
+        nameInput.value = ''; // Borrar el nombre
+        submitButton.style.backgroundColor = ''; // Restablecer el color del botón
+        submitButton.style.color = ''; // Restablecer el color del texto
+        cardText.innerHTML = ''; // Limpiar el texto de la tarjeta
+      }
+    });
+  </script>
+</body>
+
+</html>
+``
