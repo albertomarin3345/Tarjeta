@@ -51,47 +51,45 @@
         return;
       }
 
-      // Texto que se mostrará
-      // Texto que se mostrará
+    
 const fullText = name + '...  ¡Que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres! Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
       
-      // Cambiar el color del botón a verde
+     
       this.style.backgroundColor = 'green';
-      this.style.color = 'white'; // Cambiar el color del texto si es necesario
+      this.style.color = 'white'; 
   
-      // Función para mostrar el texto letra por letra
+    
       let index = 0;
-      cardText.innerHTML = ''; // Limpiar el texto anterior
+      cardText.innerHTML = ''; 
       const interval = setInterval(() => {
         if (index < fullText.length) {
-          // Agregar el carácter actual al innerHTML
+         
           cardText.innerHTML += fullText.charAt(index);
           index++;
         } else {
-          clearInterval(interval); // Detener el intervalo cuando se haya mostrado todo el texto
+          clearInterval(interval); 
         }
-      }, 80); // Cambia el número para ajustar la velocidad de aparición
+      }, 80); n
     });
 
-    // Evitar que la tarjeta se abra si el botón no está en verde
+    
     openCheckbox.addEventListener('change', function () {
       if (this.checked && submitButton.style.backgroundColor !== 'green') {
-        this.checked = false; // Cerrar la tarjeta si el botón no está en verde
+        this.checked = false; 
         alert('Por favor, agrega tu nombre primero.');
       }
     });
 
-    // Restablecer el nombre y el botón al cerrar la tarjeta
+  
     openCheckbox.addEventListener('change', function () {
       if (!this.checked) {
-        nameInput.value = ''; // Borrar el nombre
-        submitButton.style.backgroundColor = ''; // Restablecer el color del botón
-        submitButton.style.color = ''; // Restablecer el color del texto
-        cardText.innerHTML = ''; // Limpiar el texto de la tarjeta
+        nameInput.value = '';
+        submitButton.style.backgroundColor = ''; 
+        submitButton.style.color = ''; 
+        cardText.innerHTML = ''; 
       }
     });
   </script>
 </body>
 
 </html>
-``
