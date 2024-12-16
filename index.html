@@ -27,7 +27,7 @@
       </div>
 
       <div class="card-inside">
-        <div class="texto" id="card-text">De parte de los ATP de la zona deseamos,que esta Navidad esté llena de amor y
+        <div class="texto" id="card-text">De parte de los ATP de la zona deseamos, que esta Navidad esté llena de amor y
           momentos especiales junto a los que más quieres. Que el Año Nuevo traiga nuevos sueños y
           oportunidades.<br><br>¡Feliz Navidad!</div>
         <img src="tree.gif" alt="árbol navideño"
@@ -65,7 +65,7 @@
         return;
       }
 
-      const fullText = name + '...  De parte de los ATP de la zona deseamos,que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres. Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
+      const fullText = name + '...  De parte de los ATP de la zona deseamos, que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres. Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
 
       this.style.backgroundColor = 'green';
       this.style.color = 'white';
@@ -79,12 +79,12 @@
         } else {
           clearInterval(interval);
         }
-      }, 80);
+      }, 70);
     });
 
     openCheckbox.addEventListener('change', function () {
       if (this.checked && submitButton.style.backgroundColor === 'green') {
-        const fullText = nameInput.value.trim() + '...  De parte de los ATP de la zona deseamos,que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres. Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
+        const fullText = nameInput.value.trim() + '...  De parte de los ATP de la zona deseamos, que esta Navidad esté llena de amor y momentos especiales junto a los que más quieres. Que el Año Nuevo traiga nuevos sueños y oportunidades.  ¡Feliz Navidad!';
         decir(fullText);
       } else if (this.checked) {
         this.checked = false;
